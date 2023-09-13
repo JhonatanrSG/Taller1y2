@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Simulador de gravedad</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+  <div class="contenedor">
+
+
+    <h1 class="titulos">Simulador de Gravedad</h1>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6">
+        </button>
+
+
+      </div>
+
+      <div class="carousel-inner transform__content">
+
+        <div class="carousel-item active">
+          <img src="Icons/Moon.jpg" class="d-block w-500" alt="Luna" height="600" onclick="setDatos('Luna')"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </div>
+        <div class="carousel-item">
+          <img src="Icons/Mercurio.jpg" class="d-block w-500" alt="Mercurio" height="600" onclick="setDatos('Mercurio')"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </div>
+        <div class="carousel-item">
+          <img src="Icons/Venus.jpeg" class="d-block w-500" alt="Mercurio" height="600" onclick="setDatos('Venus')"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </div>
+        <div class="carousel-item">
+          <img src="Icons/Tierra.jpeg" class="d-block w-500" alt="Mercurio" height="600" onclick="setDatos('Tierra')"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </div>
+        <div class="carousel-item">
+          <img src="Icons/Marte.jpg" class="d-block w-500" alt="Marte" height="600" onclick="setDatos('Marte')"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </div>
+        <div class="carousel-item">
+          <img src="Icons/Jupiter.jpg" class="d-block w-500" alt="Jupiter" height="600" onclick="setDatos('Jupiter')"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        </div>
+
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6">
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Simulador de gravedad</h1>
+
+          </div>
+          <div class="modal-body">
+            <div class="seccionsimular">
+
+              <div class="balon" onclick="simular()"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="refresh" type="button" class="btn btn-primary" class="reset">reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  Planeta Default
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Simulacion Planeta Default</h1>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nombre Planeta</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" >
+          <label for="exampleFormControlInput2" class="form-label">Gravedad</label>
+          <input type="email" class="form-control" id="exampleFormControlInput2" >
+        </div>
+        
+
+        <div class="balon2" onclick="simularDefault()"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="setDatosDefault('exampleFormControlInput1','exampleFormControlInput2')">Save changes</button>
+
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+          <script src="js.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+.contenedor {
+    width: 100vw;
+    background-color: black;
+    position: absolute;
+
+
+
+}
+
+.contenedor1 {
+    
+    height: 100px;
+  width: 200px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+}
+
+.transform__content {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+
+.titulos {
+    font-family: Arial;
+    color: white;
+    text-align: center;
+}
+
+
+.c{
+
+    width: 600px;
+
+    height: 600px;
+}
+
+
+.finalpantalla{
+    overflow: hidden;
+    width: 100%;
+    background-color: black;
+}
+
+.balon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.balon2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(10, 10, 10);
+}
+
+.seccionsimular{
+height: 500px;
+}
